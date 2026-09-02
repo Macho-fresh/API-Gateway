@@ -20,10 +20,3 @@ class ApiKey(models.Model):
         null=True,
         blank=True
     )
-
-    STATUS_CHOICES = [
-        ('blocked', 'blocked'),
-        ('unblocked', 'unblocked')
-    ]
-
-    status = models.CharField(choices=STATUS_CHOICES, max_length=10)
