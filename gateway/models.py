@@ -10,7 +10,7 @@ class ApiKey(models.Model):
 
     requests_per_minute = models.IntegerField(default=5)
 
-    daily_quota = models.IntegerField(default=10)
+    daily_quota = models.IntegerField(default=5)
 
     is_active = models.BooleanField(default=True)
 
@@ -20,3 +20,10 @@ class ApiKey(models.Model):
         null=True,
         blank=True
     )
+
+    STATUS_CHOICES = [
+        ('blocked', 'blocked'),
+        ('unblocked', 'unblocked')
+    ]
+
+    status = models.CharField(choices=STATUS_CHOICES, max_length=10)
