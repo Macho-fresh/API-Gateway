@@ -20,3 +20,22 @@ class ApiKey(models.Model):
         null=True,
         blank=True
     )
+
+class RequestLog(models.Model):
+
+    api_key = models.ForeignKey(
+        ApiKey,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+
+    method = models.CharField(max_length=10)
+
+    path = models.CharField(max_length=255)
+
+    status_code = models.IntegerField()
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
