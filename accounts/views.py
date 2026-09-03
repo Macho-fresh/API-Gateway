@@ -7,7 +7,7 @@ from rest_framework import status
 class RegisterView(APIView):
     def post(self, request):
         username = request.data.get('username')
-        password = request.data.get('passsword')
+        password = request.data.get('password')
         email = request.data.get('email')
 
         User.objects.create_user(
