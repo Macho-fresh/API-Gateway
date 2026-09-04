@@ -12,7 +12,7 @@ COPY requirements.txt /app/
 
 RUN pip install --upgrade pip
 
-RUN pip install -r --no-cache-dir requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/
 
